@@ -45,11 +45,11 @@
             <label for="card-number">Card Number:</label>
             <input type="tel" id="card-number" name="card-number" placeholder="XXXX-XXXX-XXXX-XXXX">
             <script>
-                function formatCreditCardNumber(input) {
-                    input.value = input.value.replace(/\D+/g, "").replace(/(\d{4})/g, "$1-").replace(/^(\d{0,4}-)/, "$1");
+                function limitCreditCardNumber(input) {
+                    input.value = input.value.replace(/\D+/g, "").slice(0, 16);
                 }
                 document.getElementById("card-number").addEventListener("input", function() {
-                    formatCreditCardNumber(this);
+                    limitCreditCardNumber(this);
                 });
             </script><br><br>
             <label for="expiration-date">Expiration Date:</label>
