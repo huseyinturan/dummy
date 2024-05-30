@@ -43,7 +43,15 @@
             <label for="name">Name:</label>
             <input type="text" id="name" name="name"><br><br>
             <label for="card-number">Card Number:</label>
-            <input type="number" id="card-number" name="card-number" placeholder="XXXX-XXXX-XXXX-XXXX"><br><br>
+            <input type="tel" id="card-number" name="card-number" placeholder="XXXX-XXXX-XXXX-XXXX">
+            <script>
+                function formatCreditCardNumber(input) {
+                    input.value = input.value.replace(/\D+/g, "").replace(/(\d{4})/g, "$1-").replace(/^(\d{0,4}-)/, "$1");
+                }
+                document.getElementById("card-number").addEventListener("input", function() {
+                    formatCreditCardNumber(this);
+                });
+            </script><br><br>
             <label for="expiration-date">Expiration Date:</label>
             <input type="month" id="expiration-date" name="expiration-date"><br><br>
             <label for="security-code">Security Code:</label>
