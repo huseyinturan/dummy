@@ -41,9 +41,9 @@
         <h2>Purchase Information</h2>
         <form action="#" method="post">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
+            <input type="text" id="name" name="name" autocomplete="cc-name"><br><br>
             <label for="card-number">Card Number:</label>
-            <input type="tel" id="card-number" name="card-number" placeholder="XXXX-XXXX-XXXX-XXXX">
+            <input type="tel" id="card-number" name="card-number" placeholder="XXXX-XXXX-XXXX-XXXX" autocomplete="cc-number">
             <script>
                 function formatCreditCardNumber(input) {
                     var value = input.value.replace(/\D+/g, "");
@@ -56,9 +56,9 @@
                 });
             </script><br><br>
             <label for="expiration-date">Expiration Date:</label>
-            <input type="month" id="expiration-date" name="expiration-date"><br><br>
+            <input type="month" id="expiration-date" name="expiration-date" autocomplete="cc-exp"><br><br>
             <label for="security-code">Security Code:</label>
-            <input type="number" id="security-code" name="security-code" placeholder="XXX"><br><br>
+            <input type="number" id="security-code" name="security-code" placeholder="XXX" autocomplete="cc-csc"><br><br>
             <label for="amount">Amount:</label>
             <input type="number" id="amount" name="amount" value="0.00"><br><br>
             <button type="submit">Submit Payment</button>
